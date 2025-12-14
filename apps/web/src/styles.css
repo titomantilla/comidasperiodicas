@@ -1,0 +1,583 @@
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #0d1728;
+  color: #e8eefc;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+}
+
+a { color: #77a7ff; }
+
+.muted { opacity: 0.75; }
+.error { color: #ff6b6b; }
+
+.page {
+  min-height: 100vh;
+}
+
+.content {
+  padding: 88px 24px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-title {
+  margin: 0 0 14px 0;
+}
+
+.section {
+  margin-top: 18px;
+}
+
+.panel {
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
+}
+
+/* TopBar */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: rgba(15, 43, 90, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.topbar-inner {
+  height: 64px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand {
+  text-decoration: none;
+  font-weight: 700;
+  color: inherit;
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn-link {
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+  color: inherit;
+}
+
+.btn-link.active {
+  border-color: rgba(90,140,255,0.5);
+}
+
+.btn-secondary {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+  color: inherit;
+  cursor: pointer;
+}
+
+.btn-primary {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 0;
+  background: rgba(60,120,255,0.95);
+  color: white;
+  cursor: pointer;
+}
+
+/* Login */
+.login-wrap {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.login-card {
+  width: min(520px, 92vw);
+  padding: 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
+}
+
+/* Form */
+.form {
+  display: grid;
+  gap: 12px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.25);
+  color: inherit;
+  outline: none;
+}
+
+.two {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 760px) {
+  .two { grid-template-columns: 1fr 1fr; }
+}
+
+/* Cards grid */
+.grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+@media (min-width: 700px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1020px) {
+  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.r-card {
+  text-align: left;
+  border-radius: 14px;
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+  color: inherit;
+  cursor: pointer;
+}
+
+.r-card-title {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.r-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  opacity: 0.8;
+  font-size: 13px;
+}
+
+.r-badge {
+  margin-top: 12px;
+  display: inline-block;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.10);
+}
+.r-badge.visited { opacity: 0.95; }
+.r-badge.unvisited { opacity: 0.75; }
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  z-index: 20;
+}
+
+.modal {
+  width: min(720px, 96vw);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: #0a1220;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.modal-header {
+  padding: 14px 14px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.modal-title {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.modal-body {
+  padding: 14px;
+}
+
+.details-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin-bottom: 10px;
+}
+
+.notes {
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+.modal-actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+}
+
+/* Footer del card: badge a la izquierda, rating a la derecha */
+.r-card-footer {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Rating */
+.r-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+.r-rating-star {
+  line-height: 1;
+}
+
+.r-rating-value {
+  line-height: 1;
+}
+
+.modal-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-actions-slot {
+  display: flex;
+  align-items: center;
+}
+
+.topbar-profile{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding-right:10px;
+  border-right:1px solid rgba(255,255,255,0.08);
+  margin-right:10px;
+}
+
+.topbar-avatar{
+  width:28px;
+  height:28px;
+  border-radius:999px;
+  object-fit:cover;
+  border:1px solid rgba(255,255,255,0.12);
+}
+
+.topbar-avatar-fallback{
+  width:28px;
+  height:28px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.10);
+  border:1px solid rgba(255,255,255,0.12);
+}
+
+.topbar-username{
+  font-size:14px;
+  opacity:.9;
+}
+
+/* =========================
+   MODAL - DETAILS SPACING
+   ========================= */
+
+/* Contenedor general del detalle */
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;               /* separación entre bloques (info / notas / acciones) */
+}
+
+/* Bloques de información dentro del modal */
+.details-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;               /* separación entre filas */
+}
+
+/* Cada fila con campos */
+.details-row {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 22px;        /* separación horizontal entre campos */
+  row-gap: 8px;            /* separación si hace wrap */
+  padding: 6px 0;          /* aire vertical por fila */
+}
+
+/* Cada campo dentro de una fila */
+.details-row > div {
+  min-width: 220px;        /* evita que quede todo apretado */
+  line-height: 1.35;       /* legibilidad */
+}
+
+/* Notas */
+.notes {
+  line-height: 1.45;
+}
+
+/* Acciones (botones) */
+.modal-actions {
+  display: flex;
+  gap: 10px;               /* separación entre botones */
+  margin-top: 6px;
+  align-items: center;
+}
+
+/* Select más “premium” */
+.select{
+  width: 100%;
+  height: 44px;
+  padding: 0 44px 0 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(0,0,0,0.25);
+  color: rgba(255,255,255,0.92);
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+
+  /* saca el look nativo */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* flecha custom */
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(255,255,255,0.75) 50%),
+    linear-gradient(135deg, rgba(255,255,255,0.75) 50%, transparent 50%);
+  background-position:
+    calc(100% - 22px) 18px,
+    calc(100% - 16px) 18px;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.select:hover{
+  border-color: rgba(255,255,255,0.18);
+  background: rgba(0,0,0,0.28);
+}
+
+.select:focus{
+  border-color: rgba(59,130,246,0.65);
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.25);
+}
+
+.select:disabled{
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+/* Placeholder "Seleccionar..." más apagado */
+.select option[value=""]{
+  color: rgba(255,255,255,0.55);
+}
+
+/* Checkbox row */
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Custom checkbox */
+.checkbox input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
+
+  border: 1px solid rgba(255,255,255,0.20);
+  background: rgba(255,255,255,0.06);
+
+  display: grid;
+  place-content: center;
+
+  transition: background 120ms ease, border-color 120ms ease, transform 120ms ease;
+}
+
+/* Focus */
+.checkbox input[type="checkbox"]:focus-visible {
+  outline: 2px solid rgba(59,130,246,0.7);
+  outline-offset: 2px;
+}
+
+/* Checked state */
+.checkbox input[type="checkbox"]:checked {
+  background: rgba(59,130,246,0.85);
+  border-color: rgba(59,130,246,0.9);
+}
+
+/* Checkmark */
+.checkbox input[type="checkbox"]::after {
+  content: "";
+  width: 6px;
+  height: 10px;
+  border-right: 2px solid rgba(255,255,255,0.95);
+  border-bottom: 2px solid rgba(255,255,255,0.95);
+  transform: rotate(45deg) scale(0);
+  transform-origin: center;
+  transition: transform 120ms ease;
+}
+
+.checkbox input[type="checkbox"]:checked::after {
+  transform: rotate(45deg) scale(1);
+}
+
+/* Disabled */
+.checkbox input[type="checkbox"]:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.checkbox:has(input:disabled) {
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+/* 1) Evita overflow horizontal en el modal */
+.modal {
+  max-width: min(980px, 92vw);
+  width: 92vw;
+}
+
+.modal-body {
+  overflow-x: hidden;
+}
+
+/* 2) Inputs siempre dentro del contenedor */
+.form label {
+  display: block;
+  min-width: 0;
+}
+
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* 3) Grids: permitir que los hijos reduzcan su ancho */
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.form-grid-2 > * {
+  min-width: 0;
+}
+
+/* 4) En pantallas chicas, 1 columna */
+@media (max-width: 720px) {
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 5) Textarea sin “resize” horizontal */
+.form textarea {
+  resize: vertical;
+}
+
+/* Badge base */
+.r-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* Not visited = amarillo */
+.r-badge.is-unvisited {
+  background: rgba(250, 204, 21, 0.18); /* amarillo suave */
+  border-color: rgba(250, 204, 21, 0.35);
+  color: rgba(255,255,255,0.92);
+}
+
+/* Visited: color por rating */
+.r-badge.is-visited.tone-bad {
+  background: rgba(239, 68, 68, 0.20);  /* rojo clarito */
+  border-color: rgba(239, 68, 68, 0.35);
+  color: rgba(255,255,255,0.92);
+}
+
+.r-badge.is-visited.tone-ok {
+  background: rgba(34, 197, 94, 0.18);  /* verde clarito */
+  border-color: rgba(34, 197, 94, 0.30);
+  color: rgba(255,255,255,0.92);
+}
+
+.r-badge.is-visited.tone-good {
+  background: rgba(34, 197, 94, 0.32);  /* verde más potente */
+  border-color: rgba(34, 197, 94, 0.45);
+  color: rgba(255,255,255,0.95);
+}
+
+/* (Opcional) rating alineado a la derecha como lo tenés */
+.r-card {
+  position: relative;
+}
+
+.r-rating {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  font-weight: 700;
+  opacity: 0.9;
+}
