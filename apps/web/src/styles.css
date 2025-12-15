@@ -730,3 +730,91 @@ input, textarea {
 .chulius-panel-inner{
   width: 100%;
 }
+
+/* ========= Mobile: TopBar ========= */
+@media (max-width: 640px) {
+  .topbar-inner{
+    padding: 10px 12px;
+    gap: 10px;
+    align-items: center;
+  }
+
+  /* Si el brand ocupa mucho, que pueda achicarse sin romper el layout */
+  .brand{
+    min-width: 0;
+    font-size: 16px;
+    line-height: 1.1;
+  }
+
+  .topbar-actions{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  /* Evita que “+ Agregar Lugar” haga wrap y rompa el alto */
+  .btn-link,
+  .btn-secondary{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    line-height: 1;
+    height: 38px;
+    padding: 0 12px;
+    box-sizing: border-box;
+  }
+
+  /* Opcional: ocultar username para ganar espacio (dejá solo avatar) */
+  .topbar-username{
+    display: none;
+  }
+}
+
+/* ========= Mobile: Chulius panel / carousel ========= */
+@media (max-width: 640px) {
+  .chulius-panel{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .chulius-panel-left{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* CLAVE: permite que el lado derecho se achique y no “empuje” las cards fuera */
+  .chulius-panel-right,
+  .chulius-carousel,
+  .chulius-track{
+    min-width: 0;
+  }
+
+  /* La fila de cards: horizontal y scrolleable (swipe) */
+  .chulius-track{
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 6px;
+  }
+
+  /* Cards más chicas para entrar en mobile */
+  .franco-card{
+    flex: 0 0 78%;
+    scroll-snap-align: start;
+  }
+
+  /* Flechas más compactas (si las usás) */
+  .chulius-arrow{
+    width: 34px;
+    height: 34px;
+  }
+}
