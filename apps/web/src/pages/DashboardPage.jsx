@@ -14,6 +14,8 @@ import {
   updateLastVisit,
 } from "../services/restaurants";
 import { getMemberProfile } from "../services/members";
+import ChuliusOffdaysPanel from "../components/ChuliusOffdaysPanel";
+
 
 function formatTs(ts) {
   try {
@@ -200,6 +202,10 @@ export default function DashboardPage() {
       <TopBar profile={profileLoading ? null : profile} />
 
       <div className="content">
+        <div className="content">
+  <ChuliusOffdaysPanel />
+</div>
+
         <h2 className="page-title">Listado de Lugares</h2>
 
         {loading ? <div className="muted">Cargando...</div> : null}
