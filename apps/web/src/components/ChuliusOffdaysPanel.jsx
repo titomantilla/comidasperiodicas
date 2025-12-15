@@ -47,8 +47,8 @@ export default function ChuliusOffdaysPanel({
   count = 8,
   seedStart = new Date(2025, 11, 14), // 14 Dic 2025
   imageSrc,
-  title = "Próximos francos del Chulius",
-  subtitle = "¿Cuándo lo veremos al Chuleto?",
+  title = "Francos:",
+  subtitle = "Proximos",
 }) {
   const today = atNoon(new Date());
 
