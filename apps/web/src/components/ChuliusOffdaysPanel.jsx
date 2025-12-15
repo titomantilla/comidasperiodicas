@@ -45,7 +45,7 @@ function buildUpcomingOffdays({ seedStart, today, count }) {
 
 export default function ChuliusOffdaysPanel({
   count = 8,
-  seedStart = new Date(2025, 11, 15), // 14 Dic 2025
+  seedStart = new Date(2025, 11, 13), // 14 Dic 2025
   imageSrc,
   title = "Francos:",
   subtitle = "Proximos",
