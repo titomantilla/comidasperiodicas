@@ -20,9 +20,9 @@ a { color: #77a7ff; }
 }
 
 .content {
-  padding: 88px 24px 24px;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 28px 28px;
 }
 
 .page-title {
@@ -175,6 +175,7 @@ input, textarea {
   background: rgba(255,255,255,0.03);
   color: inherit;
   cursor: pointer;
+  position: relative;
 }
 
 .r-card-title {
@@ -193,11 +194,14 @@ input, textarea {
 
 .r-badge {
   margin-top: 12px;
-  display: inline-block;
-  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   padding: 6px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.10);
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.12);
 }
 .r-badge.visited { opacity: 0.95; }
 .r-badge.unvisited { opacity: 0.75; }
@@ -214,7 +218,8 @@ input, textarea {
 }
 
 .modal {
-  width: min(720px, 96vw);
+  width: 92vw;
+  max-width: min(980px, 92vw);
   border-radius: 16px;
   border: 1px solid rgba(255,255,255,0.10);
   background: #0a1220;
@@ -237,24 +242,7 @@ input, textarea {
 
 .modal-body {
   padding: 14px;
-}
-
-.details-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 18px;
-  margin-bottom: 10px;
-}
-
-.notes {
-  margin-top: 10px;
-  opacity: 0.9;
-}
-
-.modal-actions {
-  margin-top: 14px;
-  display: flex;
-  gap: 10px;
+  overflow-x: hidden;
 }
 
 /* Footer del card: badge a la izquierda, rating a la derecha */
@@ -266,13 +254,16 @@ input, textarea {
   gap: 12px;
 }
 
-/* Rating */
+/* Rating anchored bottom-right */
 .r-rating {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-weight: 600;
-  opacity: 0.95;
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  font-weight: 700;
+  opacity: 0.9;
 }
 
 .r-rating-star {
@@ -349,6 +340,7 @@ input, textarea {
   column-gap: 22px;        /* separación horizontal entre campos */
   row-gap: 8px;            /* separación si hace wrap */
   padding: 6px 0;          /* aire vertical por fila */
+  margin-bottom: 10px;
 }
 
 /* Cada campo dentro de una fila */
@@ -359,6 +351,8 @@ input, textarea {
 
 /* Notas */
 .notes {
+  margin-top: 10px;
+  opacity: 0.9;
   line-height: 1.45;
 }
 
@@ -484,16 +478,6 @@ input, textarea {
   opacity: 0.85;
 }
 
-/* 1) Evita overflow horizontal en el modal */
-.modal {
-  max-width: min(980px, 92vw);
-  width: 92vw;
-}
-
-.modal-body {
-  overflow-x: hidden;
-}
-
 /* 2) Inputs siempre dentro del contenedor */
 .form label {
   display: block;
@@ -531,19 +515,7 @@ input, textarea {
   resize: vertical;
 }
 
-/* Badge base */
-.r-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 600;
-  border: 1px solid rgba(255,255,255,0.12);
-}
-
-/* Not visited = amarillo */
+/* Badge variants */
 .r-badge.is-unvisited {
   background: rgba(250, 204, 21, 0.18); /* amarillo suave */
   border-color: rgba(250, 204, 21, 0.35);
@@ -569,19 +541,6 @@ input, textarea {
   color: rgba(255,255,255,0.95);
 }
 
-/* (Opcional) rating alineado a la derecha como lo tenés */
-.r-card {
-  position: relative;
-}
-
-.r-rating {
-  position: absolute;
-  right: 14px;
-  bottom: 14px;
-  font-weight: 700;
-  opacity: 0.9;
-}
-
 /* --- Chulius panel layout --- */
 .chulius-panel{
   display: flex;
@@ -589,6 +548,7 @@ input, textarea {
   justify-content: space-between;
   gap: 16px;
   width: 100%;
+  margin: 22px auto 26px;
 }
 
 .chulius-panel-left{
@@ -713,18 +673,6 @@ input, textarea {
   letter-spacing: .02em;
 }
 
-/* Asegura que el contenedor principal sea consistente */
-.content{
-  max-width: 1200px;      /* usá el mismo valor que venís usando */
-  margin: 0 auto;
-  padding: 28px 28px;     /* el padding horizontal que te guste */
-}
-
-/* El panel de Chulius alineado con el resto del contenido */
-.chulius-panel{
-  margin: 22px auto 26px; /* arriba y abajo -> centrado visual entre topbar y título */
-  width: 100%;
-}
 
 /* Si tu panel tiene un wrapper interno que mete padding raro */
 .chulius-panel-inner{

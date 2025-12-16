@@ -11,9 +11,11 @@ const RESTAURANT_TYPES = [
   "Peruano",
   "Mexicano",
   "Italiano",
-  "Vegetariano/Vegano",
+  "Asiatico",
   "Bar",
+  "Comida Local/Porteño",
   "Otro",
+  "Ambulante"
 ];
 
 function safe(v) {
